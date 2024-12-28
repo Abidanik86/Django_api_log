@@ -62,6 +62,8 @@ class APILoggingMiddleware(MiddlewareMixin):
             print("Error while logging API exception:", e)
 
     def should_log(self, path):
+        # Add Your Main App Core where the settings.py from there add the urls.py path's 
+        # Example("your app path")
         return path.startswith("/api/users/") or path.startswith("/api/fcc/")   
 
     def get_request_body(self, request):
